@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+.todo-container {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    position: relative;
+    top: 100px;
+    background-color: aliceblue;
+    box-shadow: 3px 3px 10px rosybrown;
+    border-top: 5px solid green;
+    border-bottom: 5px solid green;
+    transition: all 3s ease-in;
+    animation: slidein 1s forwards;
+}
+
+h1 {
+    color: blueviolet;
+}
+
+.todo-container:hover {
+    transform: scale(1.2);
+}
+
+.todo-items {
+    display: block;
+    justify-content: space-between;
+    padding: 10px;
+    animation: fedin 1s forwards;
+}
+
+.todo-value {
+    background: transparent;
+    border-radius: 5px solid black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    flex-grow: 1;
+    margin: 10px;
+
+}
+
+.todo-items:has(.todo-checkbox:checked) {
+    color: whitesmoke;
+    order: 1;
+}
+
+@keyframes slidin {
+    from {
+        opacity: 0;
+        transform: translety(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translety(0);
+    }
+}
+
+@keyframes fedin {
+    from {
+        opacity: 0;
+        transform: translety(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translety(0);
+    }
+}
